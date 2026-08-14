@@ -19,6 +19,10 @@
  */
 
 @theme inline {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Marcellus", ui-serif, Georgia, serif;
+  --font-arabic: "Amiri Quran", "Amiri", serif;
+  --font-urdu: "Noto Nastaliq Urdu", serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -62,31 +66,50 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 1rem;
+  --background: oklch(0.988 0.008 95);
+  --foreground: oklch(0.24 0.03 160);
+  --surface-white: oklch(1 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.24 0.03 160);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.24 0.03 160);
+  --primary: oklch(0.46 0.09 167);
+  --primary-foreground: oklch(0.985 0.01 95);
+  --secondary: oklch(0.955 0.02 150);
+  --secondary-foreground: oklch(0.33 0.06 165);
+  --muted: oklch(0.958 0.012 110);
+  --muted-foreground: oklch(0.52 0.03 160);
+  --accent: oklch(0.78 0.11 82);
+  --accent-foreground: oklch(0.26 0.05 80);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.915 0.015 130);
+  --input: oklch(0.915 0.015 130);
+  --ring: oklch(0.46 0.09 167);
+  --gradient-hero: linear-gradient(135deg, oklch(0.46 0.09 167) 0%, oklch(0.36 0.08 175) 55%, oklch(0.32 0.06 195) 100%);
+  --gradient-gold: linear-gradient(120deg, oklch(0.86 0.1 88), oklch(0.72 0.13 72));
+  --gradient-soft: linear-gradient(160deg, oklch(0.985 0.015 130), oklch(0.96 0.02 95));
+  --shadow-soft: 0 8px 30px -12px oklch(0.46 0.09 167 / 0.25);
+  --shadow-glow: 0 0 0 1px oklch(0.46 0.09 167 / 0.08), 0 18px 50px -18px oklch(0.46 0.09 167 / 0.45);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
+  /* Good Deed Wheel — restrained, professional Islamic palette:
+     alternating deep emerald / ivory slices with a gold rim. */
+  --wheel-deep: oklch(0.36 0.07 165);
+  --wheel-deep-ink: oklch(0.97 0.02 110);
+  --wheel-soft: oklch(0.965 0.016 110);
+  --wheel-soft-ink: oklch(0.33 0.06 165);
+  --wheel-line: oklch(0.78 0.11 85 / 0.55);
+  --wheel-rim: oklch(0.78 0.12 82);
+  --wheel-1: oklch(0.57 0.14 164);
+  --wheel-2: oklch(0.76 0.16 78);
+  --wheel-3: oklch(0.61 0.14 236);
+  --wheel-4: oklch(0.65 0.17 22);
+  --wheel-5: oklch(0.61 0.16 309);
   --sidebar: oklch(0.984 0.003 247.858);
   --sidebar-foreground: oklch(0.129 0.042 264.695);
   --sidebar-primary: oklch(0.208 0.042 265.755);
@@ -98,20 +121,29 @@
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
+  --surface-white: var(--card);
+  --wheel-deep: oklch(0.3 0.06 168);
+  --wheel-deep-ink: oklch(0.95 0.02 110);
+  --wheel-soft: oklch(0.42 0.05 168);
+  --wheel-soft-ink: oklch(0.96 0.015 110);
+  --wheel-line: oklch(0.78 0.11 85 / 0.4);
+  --wheel-rim: oklch(0.72 0.11 82);
+  --background: oklch(0.19 0.025 175);
+  --foreground: oklch(0.96 0.01 110);
+  --card: oklch(0.24 0.03 172);
+  --card-foreground: oklch(0.96 0.01 110);
+  --popover: oklch(0.24 0.03 172);
+  --popover-foreground: oklch(0.96 0.01 110);
+  --primary: oklch(0.75 0.11 165);
+  --primary-foreground: oklch(0.18 0.03 175);
+  --secondary: oklch(0.29 0.035 172);
+  --secondary-foreground: oklch(0.96 0.01 110);
+  --muted: oklch(0.29 0.035 172);
+  --muted-foreground: oklch(0.72 0.02 130);
+  --accent: oklch(0.78 0.11 82);
+  --accent-foreground: oklch(0.2 0.04 80);
+  --gradient-hero: linear-gradient(135deg, oklch(0.32 0.06 172) 0%, oklch(0.25 0.05 185) 100%);
+  --gradient-soft: linear-gradient(160deg, oklch(0.24 0.03 172), oklch(0.21 0.03 180));
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(1 0 0 / 10%);
@@ -140,5 +172,2356 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
   }
+}
+
+@utility gradient-hero {
+  background-image: var(--gradient-hero);
+}
+
+@utility gradient-gold {
+  background-image: var(--gradient-gold);
+}
+
+@utility gradient-soft {
+  background-image: var(--gradient-soft);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+@utility font-arabic {
+  font-family: var(--font-arabic);
+}
+
+@utility font-urdu {
+  font-family: var(--font-urdu);
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility glass-card {
+  background-color: color-mix(in oklab, var(--color-card) 88%, transparent);
+  border: 1px solid color-mix(in oklab, var(--color-border) 90%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+/* --- Motion system --- */
+@keyframes rah-float {
+  0%, 100% { transform: translateY(0) }
+  50% { transform: translateY(-10px) }
+}
+@keyframes rah-spin-slow {
+  to { transform: rotate(360deg) }
+}
+@keyframes rah-shimmer {
+  0% { background-position: -200% 0 }
+  100% { background-position: 200% 0 }
+}
+@keyframes rah-rise {
+  from { opacity: 0; transform: translateY(14px) }
+  to { opacity: 1; transform: none }
+}
+@keyframes rah-pulse-ring {
+  0% { transform: scale(0.85); opacity: 0.7 }
+  100% { transform: scale(1.6); opacity: 0 }
+}
+@keyframes rah-sway {
+  0%, 100% { transform: rotate(-4deg) }
+  50% { transform: rotate(4deg) }
+}
+@keyframes rah-wheel-breathe {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-accent) 20%, transparent), var(--shadow-glow) }
+  50% { box-shadow: 0 0 0 12px transparent, var(--shadow-glow) }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) }
+  15% { transform: translateX(-12px) }
+  30% { transform: translateX(10px) }
+  45% { transform: translateX(-8px) }
+  60% { transform: translateX(6px) }
+  80% { transform: translateX(-3px) }
+}
+
+
+@utility animate-float { animation: rah-float 6s ease-in-out infinite; }
+@utility animate-spin-slow { animation: rah-spin-slow 26s linear infinite; }
+@utility animate-rise { animation: rah-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@utility animate-pulse-ring { animation: rah-pulse-ring 2.2s ease-out infinite; }
+@utility animate-sway { animation: rah-sway 3.2s ease-in-out infinite; transform-origin: bottom center; }
+.deed-wheel { animation: rah-wheel-breathe 3.4s ease-in-out infinite; }
+@utility shimmer {
+  background-image: linear-gradient(90deg, transparent, color-mix(in oklab, var(--color-accent) 40%, transparent), transparent);
+  background-size: 200% 100%;
+  animation: rah-shimmer 2.2s linear infinite;
+}
+
+.arabic-ayah {
+  font-family: var(--font-arabic);
+  line-height: 2.3;
+  direction: rtl;
+}
+.urdu-text {
+  font-family: var(--font-urdu);
+  line-height: 2.4;
+  direction: rtl;
+}
+
+/* ================================================================
+   User-controlled appearance layer.
+   Every variable below is written by src/lib/appearance.ts, so the
+   theme mode, colours, fonts, spacing and density chosen in Settings
+   apply to the entire website.
+   ================================================================ */
+
+:root {
+  --brand-primary: 0.46 0.09 167;
+  --brand-ring: 0.55 0.08 167;
+  --brand-accent: 0.82 0.13 85;
+  --app-font-size: 16px;
+  --reading-line: 2.3;
+  --reading-width: 58rem;
+
+  --primary: oklch(var(--brand-primary));
+  --ring: oklch(var(--brand-ring));
+  --accent: oklch(var(--brand-accent));
+  --sidebar-primary: oklch(var(--brand-primary));
+  --gradient-hero: linear-gradient(
+    135deg,
+    oklch(var(--brand-primary)) 0%,
+    color-mix(in oklab, oklch(var(--brand-primary)) 72%, black) 100%
+  );
+  --gradient-gold: linear-gradient(
+    135deg,
+    oklch(var(--brand-accent)) 0%,
+    color-mix(in oklab, oklch(var(--brand-accent)) 78%, black) 100%
+  );
+}
+
+html[data-theme="dark"],
+html[data-theme="amoled"] {
+  --surface-white: var(--card);
+  --primary: color-mix(in oklab, oklch(var(--brand-primary)) 78%, white);
+  --accent: oklch(var(--brand-accent));
+}
+
+html[data-theme="amoled"] {
+  --surface-white: var(--card);
+  --background: oklch(0 0 0);
+  --card: oklch(0.11 0 0);
+  --popover: oklch(0.11 0 0);
+  --secondary: oklch(0.16 0 0);
+  --muted: oklch(0.16 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --sidebar: oklch(0.05 0 0);
+}
+
+
+/* ---- Extra theme modes ---------------------------------------------- */
+html[data-theme="sepia"] {
+  --background: oklch(0.96 0.022 85);
+  --foreground: oklch(0.26 0.03 60);
+  --card: oklch(0.98 0.018 85);
+  --popover: oklch(0.98 0.018 85);
+  --secondary: oklch(0.92 0.03 82);
+  --secondary-foreground: oklch(0.28 0.03 60);
+  --muted: oklch(0.92 0.03 82);
+  --muted-foreground: oklch(0.48 0.03 62);
+  --border: oklch(0.86 0.035 80);
+  --input: oklch(0.86 0.035 80);
+  --sidebar: oklch(0.94 0.025 85);
+}
+
+html[data-theme="desert"] {
+  --background: oklch(0.95 0.03 75);
+  --foreground: oklch(0.27 0.04 55);
+  --card: oklch(0.98 0.02 80);
+  --popover: oklch(0.98 0.02 80);
+  --secondary: oklch(0.91 0.04 72);
+  --secondary-foreground: oklch(0.3 0.04 55);
+  --muted: oklch(0.91 0.04 72);
+  --muted-foreground: oklch(0.5 0.035 60);
+  --border: oklch(0.85 0.045 70);
+  --input: oklch(0.85 0.045 70);
+  --sidebar: oklch(0.93 0.035 76);
+}
+
+html[data-theme="rose-dusk"] {
+  --background: oklch(0.96 0.018 15);
+  --foreground: oklch(0.26 0.04 350);
+  --card: oklch(0.99 0.01 15);
+  --popover: oklch(0.99 0.01 15);
+  --secondary: oklch(0.93 0.025 12);
+  --secondary-foreground: oklch(0.3 0.04 350);
+  --muted: oklch(0.93 0.025 12);
+  --muted-foreground: oklch(0.5 0.03 350);
+  --border: oklch(0.88 0.03 10);
+  --input: oklch(0.88 0.03 10);
+  --sidebar: oklch(0.94 0.02 14);
+}
+
+html[data-theme="emerald-night"] {
+  --surface-white: var(--card);
+  --background: oklch(0.17 0.03 165);
+  --foreground: oklch(0.95 0.02 160);
+  --card: oklch(0.22 0.035 165);
+  --popover: oklch(0.22 0.035 165);
+  --secondary: oklch(0.27 0.04 165);
+  --secondary-foreground: oklch(0.95 0.02 160);
+  --muted: oklch(0.27 0.04 165);
+  --muted-foreground: oklch(0.75 0.03 160);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --sidebar: oklch(0.15 0.03 165);
+}
+
+html[data-theme="ocean"] {
+  --surface-white: var(--card);
+  --background: oklch(0.18 0.04 250);
+  --foreground: oklch(0.95 0.02 230);
+  --card: oklch(0.23 0.045 250);
+  --popover: oklch(0.23 0.045 250);
+  --secondary: oklch(0.28 0.05 250);
+  --secondary-foreground: oklch(0.95 0.02 230);
+  --muted: oklch(0.28 0.05 250);
+  --muted-foreground: oklch(0.76 0.03 230);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --sidebar: oklch(0.16 0.04 250);
+}
+
+html[data-theme="mocha"] {
+  --surface-white: var(--card);
+  --background: oklch(0.2 0.025 55);
+  --foreground: oklch(0.94 0.02 75);
+  --card: oklch(0.25 0.03 55);
+  --popover: oklch(0.25 0.03 55);
+  --secondary: oklch(0.3 0.035 55);
+  --secondary-foreground: oklch(0.94 0.02 75);
+  --muted: oklch(0.3 0.035 55);
+  --muted-foreground: oklch(0.76 0.03 75);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --sidebar: oklch(0.18 0.025 55);
+}
+
+/* ---- New light theme modes ------------------------------------------ */
+html[data-theme="cloud"] {
+  --background: oklch(0.99 0.004 250);
+  --foreground: oklch(0.25 0.02 255);
+  --card: oklch(1 0 0);
+  --popover: oklch(1 0 0);
+  --secondary: oklch(0.955 0.008 250);
+  --secondary-foreground: oklch(0.3 0.02 255);
+  --muted: oklch(0.955 0.008 250);
+  --muted-foreground: oklch(0.52 0.02 255);
+  --border: oklch(0.915 0.01 250);
+  --input: oklch(0.915 0.01 250);
+  --sidebar: oklch(0.975 0.006 250);
+}
+
+html[data-theme="linen"] {
+  --background: oklch(0.985 0.01 95);
+  --foreground: oklch(0.26 0.02 80);
+  --card: oklch(1 0.004 95);
+  --popover: oklch(1 0.004 95);
+  --secondary: oklch(0.95 0.015 92);
+  --secondary-foreground: oklch(0.3 0.02 80);
+  --muted: oklch(0.95 0.015 92);
+  --muted-foreground: oklch(0.52 0.02 80);
+  --border: oklch(0.9 0.018 90);
+  --input: oklch(0.9 0.018 90);
+  --sidebar: oklch(0.97 0.012 95);
+}
+
+html[data-theme="sage-cream"] {
+  --background: oklch(0.98 0.014 130);
+  --foreground: oklch(0.26 0.03 150);
+  --card: oklch(1 0.006 130);
+  --popover: oklch(1 0.006 130);
+  --secondary: oklch(0.945 0.02 135);
+  --secondary-foreground: oklch(0.3 0.03 150);
+  --muted: oklch(0.945 0.02 135);
+  --muted-foreground: oklch(0.51 0.025 150);
+  --border: oklch(0.9 0.024 135);
+  --input: oklch(0.9 0.024 135);
+  --sidebar: oklch(0.965 0.016 132);
+}
+
+html[data-theme="sky-peach"] {
+  --background: oklch(0.985 0.014 225);
+  --foreground: oklch(0.26 0.03 250);
+  --card: oklch(1 0.005 225);
+  --popover: oklch(1 0.005 225);
+  --secondary: oklch(0.95 0.02 40);
+  --secondary-foreground: oklch(0.3 0.03 40);
+  --muted: oklch(0.95 0.016 225);
+  --muted-foreground: oklch(0.52 0.025 245);
+  --border: oklch(0.9 0.02 225);
+  --input: oklch(0.9 0.02 225);
+  --sidebar: oklch(0.97 0.014 225);
+}
+
+html[data-theme="blush"] {
+  --background: oklch(0.985 0.012 345);
+  --foreground: oklch(0.27 0.03 320);
+  --card: oklch(1 0.005 345);
+  --popover: oklch(1 0.005 345);
+  --secondary: oklch(0.95 0.02 320);
+  --secondary-foreground: oklch(0.3 0.03 320);
+  --muted: oklch(0.95 0.018 340);
+  --muted-foreground: oklch(0.52 0.025 320);
+  --border: oklch(0.905 0.022 340);
+  --input: oklch(0.905 0.022 340);
+  --sidebar: oklch(0.97 0.014 345);
+}
+
+html[data-theme="mint-paper"] {
+  --background: oklch(0.985 0.016 165);
+  --foreground: oklch(0.25 0.03 170);
+  --card: oklch(1 0.006 165);
+  --popover: oklch(1 0.006 165);
+  --secondary: oklch(0.945 0.024 168);
+  --secondary-foreground: oklch(0.29 0.03 170);
+  --muted: oklch(0.945 0.024 168);
+  --muted-foreground: oklch(0.51 0.025 170);
+  --border: oklch(0.9 0.026 168);
+  --input: oklch(0.9 0.026 168);
+  --sidebar: oklch(0.965 0.018 166);
+}
+
+html[data-theme="emerald-night"],
+html[data-theme="ocean"],
+html[data-theme="mocha"] {
+  --surface-white: var(--card);
+  --primary: color-mix(in oklab, oklch(var(--brand-primary)) 74%, white);
+  --accent: oklch(var(--brand-accent));
+}
+
+/* ---- Mixed-colour theme modes ---------------------------------------- */
+html[data-theme="aurora"] {
+  --surface-white: var(--card);
+  --background: oklch(0.17 0.045 215);
+  --foreground: oklch(0.96 0.02 190);
+  --card: oklch(0.23 0.05 220);
+  --popover: oklch(0.23 0.05 220);
+  --secondary: oklch(0.29 0.06 275);
+  --secondary-foreground: oklch(0.96 0.02 200);
+  --muted: oklch(0.28 0.05 240);
+  --muted-foreground: oklch(0.78 0.04 205);
+  --border: oklch(0.85 0.09 190 / 20%);
+  --input: oklch(0.85 0.09 190 / 22%);
+  --sidebar: oklch(0.15 0.045 225);
+  --theme-wash:
+    radial-gradient(120% 80% at 12% 0%, oklch(0.62 0.14 185 / 26%) 0%, transparent 62%),
+    radial-gradient(110% 85% at 92% 12%, oklch(0.55 0.16 300 / 28%) 0%, transparent 60%),
+    radial-gradient(140% 100% at 50% 110%, oklch(0.55 0.13 150 / 22%) 0%, transparent 65%);
+}
+
+html[data-theme="sunset"] {
+  --surface-white: var(--card);
+  --background: oklch(0.2 0.055 340);
+  --foreground: oklch(0.96 0.025 70);
+  --card: oklch(0.26 0.06 345);
+  --popover: oklch(0.26 0.06 345);
+  --secondary: oklch(0.33 0.08 30);
+  --secondary-foreground: oklch(0.97 0.02 70);
+  --muted: oklch(0.31 0.06 350);
+  --muted-foreground: oklch(0.8 0.05 45);
+  --border: oklch(0.85 0.1 45 / 22%);
+  --input: oklch(0.85 0.1 45 / 24%);
+  --sidebar: oklch(0.18 0.05 340);
+  --theme-wash:
+    radial-gradient(120% 85% at 8% 4%, oklch(0.68 0.17 45 / 30%) 0%, transparent 60%),
+    radial-gradient(110% 80% at 95% 8%, oklch(0.6 0.16 350 / 30%) 0%, transparent 58%),
+    radial-gradient(150% 110% at 50% 108%, oklch(0.45 0.13 300 / 30%) 0%, transparent 66%);
+}
+
+html[data-theme="noir-gold"] {
+  --surface-white: var(--card);
+  --background: oklch(0.09 0.008 80);
+  --foreground: oklch(0.95 0.02 90);
+  --card: oklch(0.15 0.012 80);
+  --popover: oklch(0.15 0.012 80);
+  --secondary: oklch(0.21 0.02 85);
+  --secondary-foreground: oklch(0.95 0.025 90);
+  --muted: oklch(0.2 0.018 85);
+  --muted-foreground: oklch(0.78 0.04 90);
+  --border: oklch(0.82 0.13 85 / 24%);
+  --input: oklch(0.82 0.13 85 / 26%);
+  --sidebar: oklch(0.07 0.006 80);
+  --theme-wash:
+    radial-gradient(120% 80% at 50% -10%, oklch(0.82 0.13 85 / 16%) 0%, transparent 60%),
+    radial-gradient(120% 90% at 100% 100%, oklch(0.7 0.1 60 / 12%) 0%, transparent 62%);
+}
+
+html[data-theme="midnight-indigo"] {
+  --surface-white: var(--card);
+  --background: oklch(0.16 0.05 280);
+  --foreground: oklch(0.95 0.02 260);
+  --card: oklch(0.22 0.06 280);
+  --popover: oklch(0.22 0.06 280);
+  --secondary: oklch(0.28 0.07 275);
+  --secondary-foreground: oklch(0.96 0.02 260);
+  --muted: oklch(0.27 0.06 278);
+  --muted-foreground: oklch(0.78 0.04 265);
+  --border: oklch(0.8 0.09 265 / 22%);
+  --input: oklch(0.8 0.09 265 / 24%);
+  --sidebar: oklch(0.14 0.05 282);
+  --theme-wash:
+    radial-gradient(120% 80% at 10% 0%, oklch(0.55 0.15 275 / 32%) 0%, transparent 62%),
+    radial-gradient(110% 85% at 90% 10%, oklch(0.6 0.12 225 / 26%) 0%, transparent 60%),
+    radial-gradient(150% 100% at 50% 110%, oklch(0.5 0.12 320 / 22%) 0%, transparent 66%);
+}
+
+html[data-theme="cherry-blossom"] {
+  --background: oklch(0.985 0.016 350);
+  --foreground: oklch(0.28 0.04 340);
+  --card: oklch(1 0.006 350);
+  --popover: oklch(1 0.006 350);
+  --secondary: oklch(0.95 0.03 165);
+  --secondary-foreground: oklch(0.3 0.04 170);
+  --muted: oklch(0.955 0.022 350);
+  --muted-foreground: oklch(0.53 0.035 340);
+  --border: oklch(0.9 0.03 350);
+  --input: oklch(0.9 0.03 350);
+  --sidebar: oklch(0.97 0.018 352);
+  --theme-wash:
+    radial-gradient(120% 80% at 0% 0%, oklch(0.9 0.07 350 / 55%) 0%, transparent 60%),
+    radial-gradient(110% 85% at 100% 6%, oklch(0.92 0.06 165 / 50%) 0%, transparent 58%),
+    radial-gradient(150% 110% at 50% 110%, oklch(0.93 0.05 300 / 45%) 0%, transparent 66%);
+}
+
+html[data-theme="emerald-gold"] {
+  --surface-white: var(--card);
+  --background: oklch(0.16 0.04 165);
+  --foreground: oklch(0.96 0.025 100);
+  --card: oklch(0.22 0.045 165);
+  --popover: oklch(0.22 0.045 165);
+  --secondary: oklch(0.28 0.05 160);
+  --secondary-foreground: oklch(0.96 0.03 95);
+  --muted: oklch(0.27 0.045 163);
+  --muted-foreground: oklch(0.8 0.05 95);
+  --border: oklch(0.82 0.13 85 / 26%);
+  --input: oklch(0.82 0.13 85 / 26%);
+  --sidebar: oklch(0.14 0.04 165);
+  --theme-wash:
+    radial-gradient(120% 80% at 6% 0%, oklch(0.55 0.13 160 / 32%) 0%, transparent 62%),
+    radial-gradient(110% 85% at 96% 8%, oklch(0.82 0.13 85 / 22%) 0%, transparent 58%),
+    radial-gradient(150% 100% at 50% 110%, oklch(0.45 0.1 150 / 30%) 0%, transparent 66%);
+}
+
+html[data-theme="aurora"],
+html[data-theme="sunset"],
+html[data-theme="noir-gold"],
+html[data-theme="midnight-indigo"],
+html[data-theme="emerald-gold"] {
+  --surface-white: var(--card);
+  --primary: color-mix(in oklab, oklch(var(--brand-primary)) 72%, white);
+  --accent: oklch(var(--brand-accent));
+}
+
+/* The mixed themes paint a soft multi-colour wash behind the whole site. */
+body {
+  background-image: var(--theme-wash, none);
+  background-attachment: fixed;
+}
+
+/* Deep gradient panels always carry light text in every dark theme, so
+   headings and buttons inside them never turn black. */
+html.dark :is(.gradient-hero, .gradient-soft),
+html.dark :is(.gradient-hero, .gradient-soft) * {
+  --primary-foreground: oklch(0.98 0.012 110);
+  --color-primary-foreground: oklch(0.98 0.012 110);
+}
+
+/* ---- Nasheed grid ---------------------------------------------------- */
+.nasheed-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  align-items: stretch;
+}
+
+.nasheed-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+  will-change: transform;
+}
+
+@media (hover: hover) {
+  .nasheed-card:hover,
+  .nasheed-card:focus-within {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: 0 18px 40px -18px color-mix(in oklab, oklch(var(--brand-primary)) 55%, transparent);
+    border-color: color-mix(in oklab, oklch(var(--brand-primary)) 45%, transparent);
+  }
+}
+
+.nasheed-embed {
+  border-radius: 0.9rem;
+  overflow: hidden;
+  min-height: 152px;
+}
+
+.nasheed-embed iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+html[data-animation="none"] .nasheed-card {
+  transition: none;
+  transform: none !important;
+}
+
+/* ---- Nasheed tiles ---------------------------------------------------- */
+.nasheed-tile {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 0.95rem;
+  border-radius: calc(var(--radius) + 0.4rem);
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in oklab, oklch(var(--brand-primary)) 7%, var(--card)) 0%,
+      var(--card) 60%
+    );
+  color: var(--foreground);
+  box-shadow: 0 10px 26px -22px color-mix(in oklab, oklch(var(--brand-primary)) 70%, transparent);
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.nasheed-tile:focus-visible {
+  outline: 2px solid oklch(var(--brand-ring));
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .nasheed-tile:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in oklab, oklch(var(--brand-primary)) 45%, transparent);
+    box-shadow: 0 18px 38px -20px color-mix(in oklab, oklch(var(--brand-primary)) 65%, transparent);
+  }
+}
+
+.nasheed-tile--active {
+  border-color: color-mix(in oklab, oklch(var(--brand-primary)) 60%, transparent);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in oklab, oklch(var(--brand-primary)) 18%, var(--card)) 0%,
+      color-mix(in oklab, oklch(var(--brand-accent)) 12%, var(--card)) 100%
+    );
+  box-shadow: 0 16px 36px -20px color-mix(in oklab, oklch(var(--brand-primary)) 80%, transparent);
+}
+
+.nasheed-tile__play {
+  display: inline-flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--gradient-hero);
+  color: var(--primary-foreground);
+  box-shadow: 0 8px 20px -12px color-mix(in oklab, oklch(var(--brand-primary)) 85%, transparent);
+}
+
+.nasheed-tile--active .nasheed-tile__play {
+  animation: nasheed-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes nasheed-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+html[data-animation="none"] .nasheed-tile,
+html[data-animation="none"] .nasheed-tile__play {
+  transition: none;
+  transform: none !important;
+  animation: none !important;
+}
+
+.nasheed-chip {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, oklch(var(--brand-primary)) 35%, transparent);
+  background: color-mix(in oklab, oklch(var(--brand-primary)) 12%, transparent);
+  padding: 0.15rem 0.6rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+/* ---- Sticky nasheed player ------------------------------------------- */
+.nasheed-player {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-inline: auto;
+  width: min(100%, 46rem);
+  padding: 0.7rem 0.9rem calc(0.7rem + env(safe-area-inset-bottom, 0px));
+  border: 1px solid var(--border);
+  border-bottom: 0;
+  border-radius: calc(var(--radius) + 0.8rem) calc(var(--radius) + 0.8rem) 0 0;
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 -18px 50px -24px color-mix(in oklab, oklch(var(--brand-primary)) 80%, transparent);
+  animation: nasheed-rise 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes nasheed-rise {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+html[data-animation="none"] .nasheed-player {
+  animation: none;
+}
+
+.nasheed-player__inner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nasheed-player__seek {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nasheed-player__btn {
+  display: inline-flex;
+  height: 2rem;
+  width: 2rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--muted-foreground);
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.nasheed-player__btn:hover {
+  color: var(--primary);
+  background: color-mix(in oklab, oklch(var(--brand-primary)) 12%, transparent);
+}
+
+.nasheed-player__play {
+  display: inline-flex;
+  height: 2.75rem;
+  width: 2.75rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--gradient-hero);
+  color: var(--primary-foreground);
+  box-shadow: 0 10px 24px -12px color-mix(in oklab, oklch(var(--brand-primary)) 85%, transparent);
+  transition: transform 0.2s ease;
+}
+
+.nasheed-player__play:hover {
+  transform: scale(1.05);
+}
+
+/* ---- Range inputs inside the player ---------------------------------- */
+.nasheed-range {
+  flex: 1 1 auto;
+  height: 0.35rem;
+  min-width: 3rem;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 999px;
+  background: color-mix(in oklab, oklch(var(--brand-primary)) 22%, var(--muted));
+  cursor: pointer;
+}
+
+.nasheed-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 0.95rem;
+  width: 0.95rem;
+  border-radius: 999px;
+  background: oklch(var(--brand-primary));
+  border: 2px solid var(--card);
+  box-shadow: 0 2px 8px -2px color-mix(in oklab, oklch(var(--brand-primary)) 80%, transparent);
+}
+
+.nasheed-range::-moz-range-thumb {
+  height: 0.95rem;
+  width: 0.95rem;
+  border-radius: 999px;
+  border: 2px solid var(--card);
+  background: oklch(var(--brand-primary));
+}
+
+.nasheed-range:focus-visible {
+  outline: 2px solid oklch(var(--brand-ring));
+  outline-offset: 3px;
+}
+
+html {
+  font-size: var(--app-font-size);
+}
+
+body {
+  font-family: var(--font-ui, var(--font-sans));
+}
+
+.app-container {
+  width: 100%;
+  max-width: var(--reading-width);
+  margin-inline: auto;
+}
+
+.arabic-ayah {
+  font-family: var(--font-arabic-user, var(--font-arabic));
+  line-height: var(--reading-line);
+}
+.quran-page-text {
+  font-family: var(--font-quran, var(--font-arabic));
+  line-height: var(--reading-line);
+  direction: rtl;
+}
+.urdu-text {
+  font-family: var(--font-urdu-user, var(--font-urdu));
+}
+
+/* Density */
+html[data-density="compact"] .app-container {
+  --compact: 1;
+}
+html[data-density="compact"] .app-container :is(.space-y-6, .space-y-8) > * + * {
+  margin-top: 0.85rem;
+}
+html[data-density="compact"] .app-container .rounded-2xl,
+html[data-density="compact"] .app-container .rounded-3xl {
+  padding: 0.75rem;
+}
+
+/* Animation level */
+html[data-animation="none"] *,
+html[data-animation="none"] *::before,
+html[data-animation="none"] *::after {
+  animation: none !important;
+  transition: none !important;
+}
+html[data-animation="subtle"] .animate-float,
+html[data-animation="subtle"] .animate-spin-slow,
+html[data-animation="subtle"] .animate-sway,
+html[data-animation="subtle"] .animate-pulse-ring {
+  animation: none !important;
+}
+
+/* Glassmorphism toggle */
+html[data-glass="off"] .glass-card {
+  backdrop-filter: none;
+  background-color: var(--color-card);
+}
+
+/* Mushaf page frame — one printed Quran page per screen */
+.mushaf-frame {
+  border: 2px solid color-mix(in oklab, oklch(var(--brand-primary)) 45%, transparent);
+  border-radius: calc(var(--radius) * 1.4);
+  box-shadow: inset 0 0 0 4px color-mix(in oklab, oklch(var(--brand-accent)) 22%, transparent);
+  background-image: radial-gradient(
+    circle at top,
+    color-mix(in oklab, oklch(var(--brand-accent)) 7%, transparent),
+    transparent 65%
+  );
+}
+
+/* Tajweed colouring */
+.tajweed-on .tj-ghunnah { color: #16a34a; }
+.tajweed-on .tj-ikhfa { color: #c026d3; }
+.tajweed-on .tj-idgham { color: #2563eb; }
+.tajweed-on .tj-qalqalah { color: #dc2626; }
+.tajweed-on .tj-madd { color: #ea580c; }
+
+/* Word-by-word chips */
+.wbw-word {
+  display: inline-block;
+  padding: 0.05em 0.25em;
+  border-radius: 0.4em;
+  transition: background-color 0.15s ease;
+}
+.wbw-word:hover {
+  background-color: color-mix(in oklab, oklch(var(--brand-accent)) 30%, transparent);
+}
+
+/* Memorization mode — text is blurred until you hover / tap it */
+.memorize .memo-line {
+  filter: blur(7px);
+  transition: filter 0.2s ease;
+  cursor: pointer;
+}
+.memorize .memo-line:hover,
+.memorize .memo-line:focus-within,
+.memorize .memo-line.revealed {
+  filter: none;
+}
+
+/* Memorization + word-by-word helpers for the mushaf reader */
+.memorize .memo-line {
+  color: transparent;
+  text-shadow: 0 0 0.6rem color-mix(in oklab, var(--foreground) 45%, transparent);
+  cursor: pointer;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+.memorize .memo-line.revealed {
+  color: inherit;
+  text-shadow: none;
+}
+.wbw-word {
+  display: inline-block;
+  padding: 0 0.15em;
+  border-radius: 0.3rem;
+  transition: background-color 0.15s ease;
+}
+.wbw-word:hover {
+  background-color: color-mix(in oklab, var(--primary) 14%, transparent);
+}
+
+/* Equalizer bars shown while a nasheed plays */
+@keyframes eq-bounce {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+.eq-bar {
+  display: inline-block;
+  width: 3px;
+  border-radius: 9999px;
+  background: var(--accent);
+  transform-origin: bottom;
+  animation: eq-bounce 0.9s ease-in-out infinite;
+}
+
+/* ---- Date line (Gregorian · Hijri) -------------------------------------
+   Two equally weighted, highlighted chips: the Gregorian date and the Hijri
+   date carry the same size and presence so neither reads as an afterthought. */
+.dateline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.dateline-greg,
+.dateline-hijri {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid color-mix(in oklab, var(--color-primary) 18%, transparent);
+  background: color-mix(in oklab, var(--color-primary) 7%, transparent);
+  padding: 0.55rem 0.85rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  color: var(--color-foreground);
+}
+
+.dateline-hijri {
+  border-color: color-mix(in oklab, var(--color-primary) 18%, transparent);
+  background: color-mix(in oklab, var(--color-primary) 7%, transparent);
+}
+
+.dateline-label {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--color-muted-foreground);
+}
+
+.dateline-hijri .dateline-label {
+  color: var(--color-muted-foreground);
+}
+
+.dateline-dot {
+  display: none;
+}
+
+.dateline-on-hero .dateline-greg,
+.dateline-on-hero .dateline-hijri,
+.dateline-on-hero .dateline-label {
+  color: inherit;
+  border-color: color-mix(in oklab, white 30%, transparent);
+  background: color-mix(in oklab, white 14%, transparent);
+}
+
+/* Hijri chip sitting on the emerald hero gradient (Ramadan header). */
+.hijri-on-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklab, white 38%, transparent);
+  background: color-mix(in oklab, white 20%, transparent);
+  padding: 0.25rem 0.8rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: white;
+}
+
+/* ------------------------------------------------------------------
+   Authentic 15 line Madani Mushaf page
+   Fifteen equal printed lines, each one justified across the full
+   measure exactly the way the paper mushaf sets its type.
+   ------------------------------------------------------------------ */
+.mushaf-sheet {
+  container-type: inline-size;
+  /* The printed measure must never overflow the page frame: the chosen
+     size acts as a cap, and narrow screens scale the glyphs down so all
+     fifteen lines still fit side to side. */
+  font-size: min(var(--mushaf-size, 28px), 4.35cqw);
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  padding: 0.35rem 0.15rem;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.mushaf-line {
+  display: flex;
+  align-items: center;
+  min-height: 2.15em;
+  line-height: 2.05;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.mushaf-words {
+  justify-content: space-between;
+  gap: 0.12em;
+  flex-wrap: nowrap;
+  cursor: default;
+  min-width: 0;
+}
+.mushaf-words.is-centered {
+  justify-content: center;
+  gap: 0.32em;
+}
+.mushaf-words > span {
+  white-space: nowrap;
+}
+
+/* Rosette around the ayah number, like the printed mushaf */
+.ayah-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.55em;
+  height: 1.55em;
+  margin-inline: 0.12em;
+  font-size: 0.62em;
+  font-family: var(--font-arabic);
+  color: color-mix(in oklab, var(--primary) 85%, var(--foreground));
+  border: 1px solid color-mix(in oklab, var(--primary) 45%, transparent);
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--primary) 8%, transparent);
+}
+
+/* Ornamental surah header band */
+.mushaf-surah-band {
+  justify-content: center;
+  min-height: 2.4em;
+  margin: 0.15em 0;
+  border-radius: 0.6rem;
+  border: 1px solid color-mix(in oklab, var(--primary) 35%, transparent);
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--primary) 12%, transparent),
+      color-mix(in oklab, var(--accent) 16%, transparent),
+      color-mix(in oklab, var(--primary) 12%, transparent)
+    );
+}
+.mushaf-surah-name {
+  font-family: var(--font-arabic);
+  font-size: 0.72em;
+  letter-spacing: 0.02em;
+  color: color-mix(in oklab, var(--primary) 88%, var(--foreground));
+}
+
+.mushaf-basmalah {
+  justify-content: center;
+  font-family: var(--font-arabic);
+  font-size: 0.78em;
+  color: color-mix(in oklab, var(--primary) 80%, var(--foreground));
+}
+
+/* On narrow phones the justified measure gets tight — let the glyphs
+   shrink slightly instead of overflowing the page frame. */
+@media (max-width: 480px) {
+  .mushaf-line {
+    line-height: 1.95;
+    min-height: 2em;
+  }
+  .mushaf-words {
+    gap: 0.06em;
+  }
+}
+
+/* ------------------------------------------------------------------
+   13 line Quran-e-Pak (Indo-Pak script)
+   Fewer, taller lines with a warmer paper tone so it never feels like
+   the 15 line Madani page.
+   ------------------------------------------------------------------ */
+.mushaf-sheet-13 {
+  font-size: min(var(--mushaf-size, 30px), 5.1cqw);
+  gap: 0.16em;
+  padding: 0.5rem 0.25rem;
+}
+.mushaf-sheet-13 .mushaf-line {
+  min-height: 2.5em;
+  line-height: 2.35;
+}
+.mushaf-sheet-13 .mushaf-words {
+  gap: 0.18em;
+}
+
+/* Phones: the thirteen wide Indo-Pak lines must fit the screen edge to edge,
+   never spill outside the page frame. */
+@media (max-width: 640px) {
+  .mushaf-sheet-13 {
+    font-size: min(var(--mushaf-size, 30px), 4cqw);
+    gap: 0.1em;
+    padding: 0.35rem 0.1rem;
+  }
+  .mushaf-sheet-13 .mushaf-line {
+    min-height: 2.15em;
+    line-height: 2.05;
+  }
+  .mushaf-sheet-13 .mushaf-words {
+    gap: 0.04em;
+  }
+  .mushaf-sheet-13 .ayah-mark {
+    min-width: 1.35em;
+    height: 1.35em;
+    margin-inline: 0.06em;
+  }
+}
+.mushaf-indo {
+  border-color: color-mix(in oklab, oklch(var(--brand-accent)) 55%, transparent);
+  background-image: radial-gradient(
+    circle at bottom,
+    color-mix(in oklab, oklch(var(--brand-accent)) 9%, transparent),
+    transparent 70%
+  );
+}
+
+/* ------------------------------------------------------------------
+   Surah medallion — the number on every surah card
+   ------------------------------------------------------------------ */
+@keyframes medallion-sheen {
+  0% {
+    transform: translateX(-140%);
+  }
+  100% {
+    transform: translateX(140%);
+  }
+}
+.surah-medallion-ring {
+  transform-origin: 50% 50%;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.group:hover .surah-medallion-ring {
+  transform: rotate(30deg);
+}
+.surah-medallion-ring-alt {
+  transform-origin: 50% 50%;
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.group:hover .surah-medallion-ring-alt {
+  transform: rotate(-22deg);
+}
+.surah-number {
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(
+    120deg,
+    color-mix(in oklab, var(--primary) 92%, var(--foreground)),
+    color-mix(in oklab, var(--accent) 88%, var(--foreground)),
+    color-mix(in oklab, var(--primary) 92%, var(--foreground))
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background-position 0.6s ease;
+}
+.group:hover .surah-number {
+  background-position: 100% 0;
+}
+.surah-card-sheen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.surah-card-sheen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 42%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    color-mix(in oklab, var(--accent) 26%, transparent),
+    transparent
+  );
+  transform: translateX(-140%);
+}
+.group:hover .surah-card-sheen::after {
+  animation: medallion-sheen 0.95s ease-out;
+}
+
+/* ------------------------------------------------------------------
+   About us — brand collaboration animations
+   ------------------------------------------------------------------ */
+@keyframes brand-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 40%, transparent);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 14px transparent;
+  }
+}
+.brand-pulse {
+  animation: brand-pulse 3.6s ease-in-out infinite;
+}
+@keyframes collab-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.collab-drift {
+  animation: collab-drift 5s ease-in-out infinite;
+}
+.collab-drift-late {
+  animation: collab-drift 5s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+@keyframes name-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+.name-shine {
+  background: linear-gradient(
+    100deg,
+    color-mix(in oklab, var(--primary) 95%, var(--foreground)),
+    color-mix(in oklab, var(--accent) 95%, white),
+    color-mix(in oklab, var(--primary) 95%, var(--foreground))
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: name-shine 5.5s linear infinite;
+}
+
+/* ------------------------------------------------------------------
+   Borderless animated logo halo (About — brand boxes)
+   ------------------------------------------------------------------ */
+@keyframes logo-halo-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.03);
+  }
+}
+@keyframes logo-halo-breathe {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.12);
+  }
+}
+@keyframes logo-halo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.logo-halo {
+  animation: logo-halo-float 6s ease-in-out infinite;
+  border: 0;
+}
+.logo-halo-glow {
+  position: absolute;
+  inset: -18%;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in oklab, var(--accent) 45%, transparent),
+    transparent 68%
+  );
+  filter: blur(10px);
+  animation: logo-halo-breathe 4.4s ease-in-out infinite;
+  pointer-events: none;
+}
+.logo-halo-ring {
+  position: absolute;
+  inset: -6%;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    color-mix(in oklab, var(--accent) 60%, transparent) 90deg,
+    transparent 190deg,
+    color-mix(in oklab, var(--primary) 55%, transparent) 280deg,
+    transparent 360deg
+  );
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+  opacity: 0.8;
+  animation: logo-halo-spin 9s linear infinite;
+  pointer-events: none;
+}
+.collab-link-line {
+  display: block;
+  width: 2px;
+  height: 22px;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--accent) 70%, transparent));
+}
+
+/* ------------------------------------------------------------------
+   Sawaa Enterprise — refined circular brand mark (restrained motion)
+   ------------------------------------------------------------------ */
+@keyframes sawaa-spin { to { transform: rotate(360deg); } }
+@keyframes sawaa-glow {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.6; }
+}
+
+.sawaa-mark { position: relative; }
+
+.sawaa-mark-aura {
+  position: absolute;
+  inset: 6%;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 50% 50%,
+    color-mix(in oklab, var(--accent) 26%, transparent),
+    transparent 70%);
+  filter: blur(8px);
+  animation: sawaa-glow 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.sawaa-mark-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: conic-gradient(from 0deg,
+    transparent 0deg,
+    color-mix(in oklab, var(--accent) 60%, transparent) 80deg,
+    transparent 190deg,
+    color-mix(in oklab, var(--primary) 55%, transparent) 280deg,
+    transparent 360deg);
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+  animation: sawaa-spin 18s linear infinite;
+  pointer-events: none;
+}
+
+.sawaa-mark-dash {
+  position: absolute;
+  inset: 7%;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklab, var(--primary) 18%, transparent);
+  pointer-events: none;
+}
+
+.sawaa-mark-core {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--accent) 22%, transparent),
+    0 8px 24px -14px color-mix(in oklab, var(--primary) 45%, transparent);
+}
+
+html[data-animation="subtle"] .sawaa-mark,
+html[data-animation="subtle"] .sawaa-mark * { animation: none !important; }
+
+
+/* ------------------------------------------------------------------
+   Quran — animated premium reading tiles
+   ------------------------------------------------------------------ */
+.quran-tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  padding: 1px;
+  isolation: isolate;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+.quran-tile:hover { transform: translateY(-3px); }
+.quran-tile:active { transform: translateY(0) scale(0.995); }
+
+/* A still, gilded frame — premium, not animated. */
+.quran-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    140deg,
+    color-mix(in oklab, var(--tile-a) 55%, transparent),
+    color-mix(in oklab, var(--border) 90%, transparent) 45%,
+    color-mix(in oklab, var(--tile-b) 45%, transparent)
+  );
+  opacity: 0.85;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+.quran-tile:hover::before { opacity: 1; }
+
+.quran-tile-inner {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 0.4rem;
+  overflow: hidden;
+  border-radius: calc(1.5rem - 1px);
+  background:
+    radial-gradient(130% 130% at 100% 0%, color-mix(in oklab, var(--tile-a) 12%, transparent), transparent 62%),
+    var(--card);
+  padding: 1.35rem 1.4rem 1.45rem;
+}
+html.dark .quran-tile-inner {
+  background:
+    radial-gradient(130% 130% at 100% 0%, color-mix(in oklab, var(--tile-a) 18%, transparent), transparent 62%),
+    var(--card);
+}
+.quran-tile-inner::after {
+  content: "";
+  position: absolute;
+  inset-inline: 1.4rem;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--tile-a) 45%, transparent), transparent);
+  pointer-events: none;
+}
+.quran-tile:hover { box-shadow: 0 22px 45px -28px color-mix(in oklab, var(--tile-a) 80%, transparent); }
+
+.quran-tile-badge {
+  display: grid;
+  place-items: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  color: var(--tile-a);
+  background: color-mix(in oklab, var(--tile-a) 12%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--tile-a) 32%, transparent);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+.quran-tile:hover .quran-tile-badge {
+  background: color-mix(in oklab, var(--tile-a) 18%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--tile-a) 50%, transparent);
+}
+
+.tile-emerald { --tile-a: oklch(0.62 0.13 165); --tile-b: oklch(0.78 0.11 82); }
+.tile-gold    { --tile-a: oklch(0.76 0.13 78);  --tile-b: oklch(0.62 0.13 165); }
+.tile-azure   { --tile-a: oklch(0.62 0.12 235); --tile-b: oklch(0.72 0.12 190); }
+.tile-plum    { --tile-a: oklch(0.60 0.13 330); --tile-b: oklch(0.70 0.12 30); }
+
+/* ------------------------------------------------------------------
+   Leadership cards (About page)
+   ------------------------------------------------------------------ */
+.leader-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--primary) 4%, transparent), transparent 55%),
+    var(--card);
+  padding: 1.15rem 1.25rem;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.leader-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in oklab, var(--primary) 40%, var(--border));
+  box-shadow: 0 20px 40px -28px color-mix(in oklab, var(--primary) 75%, transparent);
+}
+.leader-rule {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--accent) 70%, transparent), transparent);
+  opacity: 0.55;
+  transition: opacity 0.4s ease;
+}
+.leader-card:hover .leader-rule { opacity: 1; }
+.leader-monogram {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  border-radius: 0.9rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  color: color-mix(in oklab, var(--primary) 90%, var(--foreground));
+  background: color-mix(in oklab, var(--primary) 9%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--primary) 28%, transparent);
+}
+.leader-index {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: color-mix(in oklab, var(--muted-foreground) 75%, transparent);
+}
+
+/* ------------------------------------------------------------------
+   Hadith collection cards
+   ------------------------------------------------------------------ */
+.hadith-card {
+  position: relative;
+  display: flex;
+  height: 100%;
+  min-height: 12.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.7rem;
+  border-radius: 1.25rem;
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+  background: var(--surface-white);
+  padding: 1.35rem 1.1rem 1.15rem;
+  text-align: center;
+  box-shadow: 0 1px 2px color-mix(in oklab, var(--foreground) 6%, transparent);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.hadith-card:hover,
+.group:hover .hadith-card {
+  border-color: color-mix(in oklab, var(--primary) 30%, var(--border));
+  box-shadow: 0 4px 14px -8px color-mix(in oklab, var(--foreground) 30%, transparent);
+}
+.hadith-card-icon {
+  display: grid;
+  place-items: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  flex-shrink: 0;
+  border-radius: 1rem;
+}
+
+/* ------------------------------------------------------------------
+   Hadith reading surface — the white boxes that hold hadith text.
+   Generously curved on every screen, with an ivory-to-white wash,
+   a gold hairline at the top and a soft emerald lift.
+   ------------------------------------------------------------------ */
+.hadith-surface {
+  position: relative;
+  border-radius: 1.25rem;
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+  background: var(--surface-white);
+  padding: 1.35rem 1.35rem 1.15rem;
+  box-shadow: 0 1px 2px color-mix(in oklab, var(--foreground) 6%, transparent);
+}
+@media (max-width: 640px) {
+  .hadith-surface { border-radius: 1.1rem; padding: 1.1rem 1.05rem 0.95rem; }
+  .hadith-card { border-radius: 1.1rem; min-height: 11rem; padding: 1.15rem 0.85rem 1rem; }
+}
+
+html[data-animation="subtle"] .quran-tile,
+html[data-animation="subtle"] .leader-card { transition: none !important; }
+
+/* ------------------------------------------------------------------
+   Compact premium footer
+   ------------------------------------------------------------------ */
+@keyframes footer-line-shift {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.footer-plate {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklab, var(--accent) 22%, var(--border));
+  background: color-mix(in oklab, var(--card) 80%, transparent);
+  backdrop-filter: blur(10px);
+}
+.footer-plate::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: var(--gradient-gold);
+  animation: footer-line-shift 5s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------------
+   Ibadah section — premium worship guide
+   ------------------------------------------------------------------ */
+@keyframes ibadah-orb {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -18px, 0) scale(1.08); }
+}
+@keyframes ibadah-ripple {
+  from { transform: scale(0); opacity: 0.35; }
+  to { transform: scale(2.6); opacity: 0; }
+}
+
+.ibadah-hero { isolation: isolate; }
+.ibadah-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(42px);
+  animation: ibadah-orb 9s ease-in-out infinite;
+  pointer-events: none;
+}
+.ibadah-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.16;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(circle at 80% 0%, #000, transparent 70%);
+}
+
+.ibadah-progress {
+  background: var(--gradient-gold);
+  transition: width 0.15s linear;
+}
+
+.ibadah-search {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklab, var(--accent) 20%, var(--border));
+  background: color-mix(in oklab, var(--card) 85%, transparent);
+  padding: 0.7rem 1.1rem;
+  box-shadow: var(--shadow-soft, 0 10px 30px -20px rgb(0 0 0 / 0.4));
+  backdrop-filter: blur(10px);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.ibadah-search:focus-within {
+  border-color: color-mix(in oklab, var(--primary) 45%, transparent);
+  box-shadow: var(--shadow-glow);
+}
+
+.ibadah-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-3xl, 1.5rem);
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--card) 88%, transparent);
+  padding: 1.15rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.ibadah-tile:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in oklab, var(--primary) 35%, transparent);
+  box-shadow: var(--shadow-glow);
+}
+.ibadah-tile-glow {
+  position: absolute;
+  inset: -40% 55% 55% -40%;
+  border-radius: 9999px;
+  background: var(--gradient-gold);
+  opacity: 0;
+  filter: blur(46px);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.ibadah-tile:hover .ibadah-tile-glow { opacity: 0.35; }
+.ibadah-tile-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 1rem;
+  color: var(--primary);
+  background: color-mix(in oklab, var(--primary) 12%, transparent);
+  border: 1px solid color-mix(in oklab, var(--primary) 18%, transparent);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ibadah-tile:hover .ibadah-tile-icon { transform: translateY(-2px) rotate(-6deg); }
+
+.ibadah-lesson {
+  position: relative;
+  border-radius: var(--radius-2xl, 1.25rem);
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--card) 86%, transparent);
+  padding: 1.05rem 1.15rem 1.05rem 1.4rem;
+  backdrop-filter: blur(8px);
+}
+.ibadah-lesson-rule {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 1rem;
+  bottom: 1rem;
+  width: 3px;
+  border-radius: 9999px;
+  background: var(--gradient-gold);
+  opacity: 0.75;
+}
+
+.ibadah-related {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  border-radius: var(--radius-2xl, 1.25rem);
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--card) 82%, transparent);
+  padding: 0.9rem 1rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.ibadah-related:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--primary) 35%, transparent);
+}
+
+.ripple { position: relative; overflow: hidden; }
+.ripple::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 9999px;
+  background: color-mix(in oklab, var(--accent) 45%, transparent);
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+}
+.ripple:active::after { animation: ibadah-ripple 0.6s ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ibadah-orb, .ripple::after { animation: none !important; }
+  .ibadah-tile:hover { transform: none; }
+}
+
+/* CEO leadership mark — halo + orbiting sparks */
+@keyframes ceo-orbit-spin { to { transform: rotate(360deg); } }
+@keyframes ceo-halo-breathe {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.08); }
+}
+.ceo-halo {
+  position: absolute;
+  inset: -18%;
+  border-radius: 9999px;
+  background: var(--gradient-gold);
+  filter: blur(26px);
+  opacity: 0.5;
+  animation: ceo-halo-breathe 5s ease-in-out infinite;
+  pointer-events: none;
+}
+.ceo-orbit {
+  position: absolute;
+  inset: -14%;
+  border-radius: 9999px;
+  border: 1px dashed color-mix(in oklab, var(--accent) 45%, transparent);
+  animation: ceo-orbit-spin 18s linear infinite;
+  pointer-events: none;
+}
+.ceo-orbit-dot {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  translate: -50% 0;
+  border-radius: 9999px;
+  background: var(--gradient-gold);
+  box-shadow: 0 0 12px color-mix(in oklab, var(--accent) 70%, transparent);
+}
+.ceo-orbit-dot--alt {
+  top: auto;
+  bottom: -4px;
+  width: 5px;
+  height: 5px;
+  opacity: 0.75;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ceo-halo, .ceo-orbit { animation: none; }
+}
+
+/* ------------------------------------------------------------------
+   Owner card (About → Leadership) — restrained, premium
+   ------------------------------------------------------------------ */
+.owner-card {
+  border: 1px solid color-mix(in oklab, var(--accent) 26%, var(--border));
+  background:
+    radial-gradient(120% 90% at 50% -20%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 70%),
+    linear-gradient(180deg, color-mix(in oklab, var(--primary) 5%, transparent), transparent 60%),
+    var(--card);
+  box-shadow: 0 30px 70px -50px color-mix(in oklab, var(--primary) 85%, transparent);
+  transition: box-shadow 0.6s ease, border-color 0.6s ease;
+}
+.owner-card:hover {
+  border-color: color-mix(in oklab, var(--accent) 42%, var(--border));
+  box-shadow: 0 36px 80px -46px color-mix(in oklab, var(--accent) 60%, transparent);
+}
+.owner-card-frame {
+  position: absolute;
+  inset: 0.6rem;
+  border-radius: inherit;
+  border: 1px solid color-mix(in oklab, var(--accent) 18%, transparent);
+  pointer-events: none;
+}
+@keyframes owner-sheen {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(220%); }
+}
+.owner-card-sheen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 38%;
+  background: linear-gradient(100deg, transparent, color-mix(in oklab, var(--accent) 14%, transparent), transparent);
+  animation: owner-sheen 9s ease-in-out infinite;
+  pointer-events: none;
+}
+.owner-halo {
+  position: absolute;
+  inset: -16%;
+  border-radius: 9999px;
+  background: var(--gradient-gold);
+  filter: blur(30px);
+  opacity: 0.34;
+  pointer-events: none;
+}
+.owner-badge {
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklab, var(--accent) 55%, transparent);
+  background: linear-gradient(135deg,
+    color-mix(in oklab, var(--accent) 22%, transparent),
+    color-mix(in oklab, var(--accent) 8%, transparent));
+  padding: 0.4rem 1.15rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--accent) 88%, var(--foreground));
+  box-shadow: 0 10px 30px -18px color-mix(in oklab, var(--accent) 90%, transparent);
+}
+.owner-underline {
+  display: block;
+  width: 4.5rem;
+  height: 2px;
+  margin: 0.85rem auto 0;
+  border-radius: 9999px;
+  background: var(--gradient-gold);
+  opacity: 0.8;
+}
+html[data-animation="subtle"] .owner-card-sheen { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .owner-card-sheen { animation: none; }
+}
+
+/* ------------------------------------------------------------------
+   Settings colour chips
+   ------------------------------------------------------------------ */
+.color-dot {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  border: 2px solid color-mix(in oklab, var(--border) 90%, transparent);
+  box-shadow: inset 0 -6px 10px -8px oklch(0 0 0 / 0.6), 0 6px 16px -12px oklch(0 0 0 / 0.8);
+  transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+}
+.color-dot:hover { transform: translateY(-2px) scale(1.08); }
+.color-dot--active {
+  border-color: color-mix(in oklab, var(--primary) 70%, transparent);
+  transform: scale(1.12);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 22%, transparent), 0 10px 22px -14px oklch(0 0 0 / 0.9);
+}
+.color-dot--active::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 9999px;
+  background: oklch(1 0 0 / 0.9);
+  box-shadow: 0 0 0 1px oklch(0 0 0 / 0.25);
+}
+html[data-animation="none"] .color-dot { transition: none; }
+
+/* ------------------------------------------------------------------
+   Digital Tasbeeh — premium bead dial
+   ------------------------------------------------------------------ */
+.tasbeeh-stage {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-4xl, 1.75rem);
+  border: 1px solid color-mix(in oklab, var(--accent) 20%, var(--border));
+  background:
+    radial-gradient(120% 90% at 50% -10%, color-mix(in oklab, var(--primary) 12%, transparent), transparent 65%),
+    color-mix(in oklab, var(--card) 92%, transparent);
+  padding: 2rem 1.25rem 1.75rem;
+  box-shadow: 0 30px 70px -50px color-mix(in oklab, var(--primary) 85%, transparent);
+  backdrop-filter: blur(12px);
+}
+.tasbeeh-aura {
+  position: absolute;
+  inset: -30% 20% 55% 20%;
+  border-radius: 9999px;
+  background: var(--gradient-gold);
+  opacity: 0.16;
+  filter: blur(60px);
+  pointer-events: none;
+  animation: float 7s ease-in-out infinite;
+}
+.tasbeeh-dial {
+  position: relative;
+  margin: 1.75rem auto 0;
+  display: grid;
+  place-items: center;
+  width: min(19rem, 86vw);
+  aspect-ratio: 1;
+}
+.tasbeeh-beads {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.tasbeeh-bead {
+  position: absolute;
+  inset-inline-start: 50%;
+  top: 50%;
+  width: 0.42rem;
+  height: 0.42rem;
+  margin-inline-start: -0.21rem;
+  margin-top: -0.21rem;
+  border-radius: 9999px;
+  background: color-mix(in oklab, var(--muted-foreground) 40%, transparent);
+  transform-origin: center;
+  transition: background 0.35s ease, box-shadow 0.35s ease, scale 0.35s ease;
+}
+.tasbeeh-bead.is-lit {
+  background: color-mix(in oklab, var(--accent) 90%, white);
+  box-shadow: 0 0 10px color-mix(in oklab, var(--accent) 70%, transparent);
+  scale: 1.35;
+}
+.tasbeeh-ring {
+  position: absolute;
+  inset: 8%;
+  transform: rotate(-90deg);
+  fill: none;
+}
+.tasbeeh-ring-track {
+  stroke: color-mix(in oklab, var(--border) 90%, transparent);
+  stroke-width: 6;
+}
+.tasbeeh-ring-progress {
+  stroke: var(--color-primary);
+  stroke-width: 6;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 8px color-mix(in oklab, var(--primary) 55%, transparent));
+  transition: stroke-dashoffset 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tasbeeh-tap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 0.2rem;
+  width: 62%;
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklab, white 28%, transparent);
+  background: var(--gradient-hero, linear-gradient(140deg, var(--color-primary), color-mix(in oklab, var(--color-primary) 60%, black)));
+  color: var(--color-primary-foreground);
+  box-shadow:
+    0 26px 55px -28px color-mix(in oklab, var(--primary) 90%, transparent),
+    inset 0 1px 0 color-mix(in oklab, white 35%, transparent);
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+  overflow: hidden;
+}
+.tasbeeh-tap:active { transform: scale(0.955); }
+.tasbeeh-tap.is-done { box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent) 45%, transparent), 0 26px 55px -28px color-mix(in oklab, var(--accent) 80%, transparent); }
+.tasbeeh-count {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 14vw, 4.5rem);
+  line-height: 1;
+  animation: tasbeeh-pop 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tasbeeh-target {
+  position: relative;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.tasbeeh-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 2px solid color-mix(in oklab, white 60%, transparent);
+  animation: tasbeeh-ripple 0.65s ease-out forwards;
+  pointer-events: none;
+}
+.tasbeeh-rounds {
+  margin-inline-start: 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklab, var(--accent) 40%, transparent);
+  background: color-mix(in oklab, var(--accent) 14%, transparent);
+  padding: 0.15rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: color-mix(in oklab, var(--accent) 70%, var(--color-foreground));
+}
+@keyframes tasbeeh-pop {
+  from { transform: translateY(6px) scale(0.9); opacity: 0.3; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes tasbeeh-ripple {
+  from { transform: scale(0.72); opacity: 0.65; }
+  to { transform: scale(1.08); opacity: 0; }
+}
+html[data-animation="subtle"] .tasbeeh-aura,
+html[data-animation="subtle"] .tasbeeh-pulse { animation: none !important; }
+
+/* ------------------------------------------------------------------
+   Premium polish — Ibadah tiles & Hadith cards
+   ------------------------------------------------------------------ */
+.ibadah-tile {
+  background:
+    radial-gradient(130% 100% at 0% 0%, color-mix(in oklab, var(--primary) 9%, transparent), transparent 60%),
+    color-mix(in oklab, var(--card) 90%, transparent);
+  box-shadow: 0 22px 45px -38px color-mix(in oklab, var(--primary) 90%, transparent);
+}
+.ibadah-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 35%, color-mix(in oklab, white 45%, transparent) 50%, transparent 65%);
+  transform: translateX(-120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.ibadah-tile:hover::after {
+  opacity: 0.35;
+  animation: tile-sheen 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ibadah-tile:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in oklab, var(--accent) 45%, transparent);
+  box-shadow: 0 34px 60px -34px color-mix(in oklab, var(--primary) 95%, transparent);
+}
+.ibadah-tile:hover .ibadah-tile-icon {
+  transform: translateY(-3px) scale(1.06) rotate(-4deg);
+  background: var(--gradient-gold);
+  color: var(--color-accent-foreground);
+  border-color: transparent;
+}
+@keyframes tile-sheen {
+  from { transform: translateX(-120%); }
+  to { transform: translateX(120%); }
+}
+html[data-animation="subtle"] .ibadah-tile::after { display: none; }
+
+
+
+/* ------------------------------------------------------------------
+   Daily Good Deeds tracker
+   ------------------------------------------------------------------ */
+.deed-summary {
+  background:
+    radial-gradient(120% 100% at 0% 0%, color-mix(in oklab, var(--primary) 10%, transparent), transparent 62%),
+    color-mix(in oklab, var(--card) 92%, transparent);
+}
+.deed-summary-glow {
+  position: absolute;
+  inset: -50% 60% 60% -50%;
+  border-radius: 9999px;
+  background: var(--gradient-gold);
+  opacity: 0.18;
+  filter: blur(52px);
+  pointer-events: none;
+}
+.deed-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  border-radius: var(--radius-2xl, 1.25rem);
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--card) 90%, transparent);
+  padding: 0.85rem 0.95rem;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.deed-row:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--primary) 30%, transparent);
+  box-shadow: 0 18px 36px -32px color-mix(in oklab, var(--primary) 90%, transparent);
+}
+.deed-row-done {
+  border-color: color-mix(in oklab, var(--primary) 45%, transparent);
+  background:
+    radial-gradient(120% 100% at 0% 0%, color-mix(in oklab, var(--primary) 12%, transparent), transparent 65%),
+    color-mix(in oklab, var(--card) 92%, transparent);
+}
+.deed-tick {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  flex: none;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  color: transparent;
+  background: color-mix(in oklab, var(--secondary) 70%, transparent);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s ease, color 0.25s ease;
+}
+.deed-tick:hover { transform: scale(1.08); }
+.deed-tick-on {
+  background: var(--gradient-hero, var(--primary));
+  border-color: transparent;
+  color: var(--primary-foreground);
+}
+.deed-reward {
+  position: absolute;
+  inset: -0.4rem;
+  border-radius: 9999px;
+  border: 2px solid color-mix(in oklab, var(--accent) 70%, transparent);
+  animation: deed-reward 0.9s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes deed-reward {
+  from { transform: scale(0.6); opacity: 0.9; }
+  to { transform: scale(2.1); opacity: 0; }
+}
+html[data-animation="subtle"] .deed-reward { animation-duration: 0.4s; }
+
+/* Ibadah tiles — two per row on mobile, tighter premium padding */
+@media (max-width: 640px) {
+  .ibadah-tile { padding: 0.85rem; border-radius: 1.15rem; }
+  .ibadah-tile-icon { width: 2.1rem; height: 2.1rem; border-radius: 0.8rem; }
+}
+
+/* Leadership logo — still and professional, no motion */
+.logo-still *,
+.logo-still::before,
+.logo-still::after { animation: none !important; }
+.logo-still .sawaa-mark-aura { opacity: 0.16; }
+
+/* ------------------------------------------------------------------
+   Roman English mushaf
+   ------------------------------------------------------------------ */
+.roman-page {
+  background:
+    radial-gradient(120% 80% at 50% 0%, color-mix(in oklab, var(--accent) 8%, transparent), transparent 60%),
+    color-mix(in oklab, var(--card) 96%, transparent);
+}
+.roman-ayah {
+  padding: 0.6rem 0.2rem;
+  border-bottom: 1px dashed color-mix(in oklab, var(--border) 80%, transparent);
+}
+.roman-ayah:last-child { border-bottom: none; }
+.roman-text {
+  font-size: 1.06rem;
+  line-height: 2;
+  letter-spacing: 0.01em;
+}
+.roman-num {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  margin-inline-end: 0.5rem;
+  padding: 0 0.35rem;
+  border-radius: 9999px;
+  background: color-mix(in oklab, var(--primary) 12%, transparent);
+  color: var(--primary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+/* ------------------------------------------------------------------ *
+ * AI Quran Teacher — live word states on the Madani Mushaf page.
+ * ------------------------------------------------------------------ */
+
+.teacher-word {
+  border-radius: 0.35rem;
+  padding-inline: 0.05em;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    text-shadow 180ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 400ms ease;
+}
+
+.teacher-word:hover {
+  background-color: color-mix(in oklab, var(--color-primary) 8%, transparent);
+  cursor: pointer;
+}
+
+/* Every correctly recited word settles into a calm, readable green. */
+.teacher-word.is-done {
+  color: oklch(0.55 0.16 152);
+  background-color: color-mix(in oklab, oklch(0.55 0.16 152) 10%, transparent);
+}
+
+.teacher-word.is-faded {
+  opacity: 0.12;
+}
+
+.teacher-word.is-current {
+  color: var(--color-primary);
+  background-color: color-mix(in oklab, var(--color-primary) 14%, transparent);
+  text-shadow: 0 0 0.55em color-mix(in oklab, var(--color-primary) 55%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-primary) 35%, transparent) inset;
+  transform: translateY(-1px);
+  animation: teacher-glow 1.6s ease-in-out infinite;
+}
+
+/* A mistake stops the journey: bright red, still glowing, waiting. */
+.teacher-word.is-error {
+  color: oklch(0.58 0.24 27);
+  background-color: color-mix(in oklab, oklch(0.58 0.24 27) 16%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in oklab, oklch(0.58 0.24 27) 45%, transparent) inset;
+  text-decoration: underline wavy color-mix(in oklab, oklch(0.58 0.24 27) 70%, transparent);
+  text-underline-offset: 0.35em;
+  animation: teacher-error-glow 1.4s ease-in-out infinite;
+}
+
+@keyframes teacher-error-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 0.35em color-mix(in oklab, oklch(0.58 0.24 27) 40%, transparent);
+  }
+  50% {
+    text-shadow: 0 0 0.85em color-mix(in oklab, oklch(0.58 0.24 27) 75%, transparent);
+  }
+}
+
+@keyframes teacher-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 0.35em color-mix(in oklab, var(--color-primary) 35%, transparent);
+  }
+  50% {
+    text-shadow: 0 0 0.8em color-mix(in oklab, var(--color-primary) 70%, transparent);
+  }
+}
+
+html.reduce-motion .teacher-word.is-current,
+html.reduce-motion .teacher-word.is-error {
+  animation: none;
+}
+
+/* ------------------------------------------------------------------
+   Roman English printed page — fifteen calm lines, meaning beneath
+   ------------------------------------------------------------------ */
+.roman-sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.35rem 0.15rem 0.6rem;
+  border-radius: 1rem;
+}
+.roman-sheet .roman-text {
+  font-size: clamp(0.95rem, 3.4cqw, 1.1rem);
+  line-height: 2.05;
+}
+.roman-line {
+  padding: 0.18rem 0.35rem;
+  border-bottom: 1px dashed color-mix(in oklab, var(--border) 70%, transparent);
+}
+.roman-line:last-child { border-bottom: none; }
+.roman-translation {
+  margin-top: 1rem;
+  border-top: 2px solid color-mix(in oklab, var(--primary) 22%, transparent);
+  padding-top: 0.9rem;
+}
+.roman-translation-title {
+  margin-bottom: 0.55rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.roman-translation-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.roman-meaning {
+  margin-top: 0.15rem;
+  font-size: 0.86rem;
+  line-height: 1.75;
+  color: var(--muted-foreground);
+}
+
+
+/* ------------------------------------------------------------------
+   Madani page — all fifteen lines visible without ever zooming
+   ------------------------------------------------------------------ */
+.mushaf-sheet {
+  font-size: min(var(--mushaf-size, 28px), 4.6cqw);
+}
+@media (max-width: 640px) {
+  .mushaf-sheet {
+    font-size: min(var(--mushaf-size, 28px), 4.25cqw);
+    padding: 0.25rem 0.05rem;
+  }
+  .mushaf-sheet .mushaf-line {
+    min-height: 1.9em;
+    line-height: 1.9;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Premium, still boxes — Quran reading options & Ibadah topics
+   ------------------------------------------------------------------ */
+.quran-tile { transition: box-shadow 0.35s ease, border-color 0.35s ease; }
+.quran-tile:hover,
+.quran-tile:active { transform: none; }
+.quran-tile-inner { padding: 1.5rem 1.55rem 1.6rem; }
+
+.ibadah-box {
+  position: relative;
+  display: block;
+  border-radius: 1.4rem;
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+  background: var(--card);
+  padding: 1.1rem;
+  box-shadow: 0 14px 30px -28px color-mix(in oklab, var(--primary) 80%, transparent);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.ibadah-box:hover {
+  border-color: color-mix(in oklab, var(--primary) 35%, transparent);
+  box-shadow: 0 18px 34px -26px color-mix(in oklab, var(--primary) 85%, transparent);
+}
+.ibadah-box-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0.9rem;
+  color: var(--primary);
+  background: color-mix(in oklab, var(--primary) 10%, transparent);
+}
+@media (max-width: 640px) {
+  .ibadah-box { padding: 0.9rem; border-radius: 1.2rem; }
+  .ibadah-box-icon { width: 2.2rem; height: 2.2rem; border-radius: 0.8rem; }
+}
+
+/* ------------------------------------------------------------------
+   Voice search microphone
+   ------------------------------------------------------------------ */
+.voice-mic {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--surface-white);
+  color: var(--muted-foreground);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.voice-mic:hover {
+  color: var(--foreground);
+  border-color: color-mix(in oklab, var(--foreground) 30%, var(--border));
+}
+.voice-mic-live {
+  background: var(--secondary);
+  color: var(--foreground);
+  border-color: color-mix(in oklab, var(--foreground) 35%, var(--border));
 }

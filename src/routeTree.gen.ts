@@ -10,33 +10,583 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CalendarRouteImport } from './routes/calendar'
+import { Route as DeedsRouteImport } from './routes/deeds'
+import { Route as DuasRouteImport } from './routes/duas'
+import { Route as FamilyRouteImport } from './routes/family'
+import { Route as GuessProphetRouteImport } from './routes/guess-prophet'
+import { Route as HalalRouteImport } from './routes/halal'
+import { Route as IbadaatRouteImport } from './routes/ibadaat'
+import { Route as JannahRouteImport } from './routes/jannah'
+import { Route as LakeRouteImport } from './routes/lake'
+import { Route as LearnSalahRouteImport } from './routes/learn-salah'
+import { Route as MoodRouteImport } from './routes/mood'
+import { Route as MoreRouteImport } from './routes/more'
+import { Route as NaatsRouteImport } from './routes/naats'
+import { Route as NamesRouteImport } from './routes/names'
+import { Route as ProphetsRouteImport } from './routes/prophets'
+import { Route as QaidaRouteImport } from './routes/qaida'
+import { Route as QiblaRouteImport } from './routes/qibla'
+import { Route as QuizRouteImport } from './routes/quiz'
+import { Route as RamadanRouteImport } from './routes/ramadan'
+import { Route as ScannerRouteImport } from './routes/scanner'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as SeerahRouteImport } from './routes/seerah'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as TasbeehRouteImport } from './routes/tasbeeh'
+import { Route as TrackerRouteImport } from './routes/tracker'
+import { Route as TrailRouteImport } from './routes/trail'
+import { Route as TreeRouteImport } from './routes/tree'
+import { Route as WheelRouteImport } from './routes/wheel'
+import { Route as ZakatRouteImport } from './routes/zakat'
+import { Route as ApiTranslateRouteImport } from './routes/api/translate'
+import { Route as HadithIndexRouteImport } from './routes/hadith/index'
+import { Route as HadithBookIdRouteImport } from './routes/hadith/$bookId'
+import { Route as MushafLinesRouteImport } from './routes/mushaf/$lines'
+import { Route as QuranIndexRouteImport } from './routes/quran/index'
+import { Route as QuranSurahIdRouteImport } from './routes/quran/$surahId'
+import { Route as QuranPdfRouteImport } from './routes/quran/pdf'
+import { Route as QuranRomanRouteImport } from './routes/quran/roman'
+import { Route as QuranTeacherRouteImport } from './routes/quran/teacher'
+import { Route as ApiPublicMediaSplatRouteImport } from './routes/api/public/media/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalendarRoute = CalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeedsRoute = DeedsRouteImport.update({
+  id: '/deeds',
+  path: '/deeds',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DuasRoute = DuasRouteImport.update({
+  id: '/duas',
+  path: '/duas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FamilyRoute = FamilyRouteImport.update({
+  id: '/family',
+  path: '/family',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuessProphetRoute = GuessProphetRouteImport.update({
+  id: '/guess-prophet',
+  path: '/guess-prophet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HalalRoute = HalalRouteImport.update({
+  id: '/halal',
+  path: '/halal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IbadaatRoute = IbadaatRouteImport.update({
+  id: '/ibadaat',
+  path: '/ibadaat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JannahRoute = JannahRouteImport.update({
+  id: '/jannah',
+  path: '/jannah',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LakeRoute = LakeRouteImport.update({
+  id: '/lake',
+  path: '/lake',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnSalahRoute = LearnSalahRouteImport.update({
+  id: '/learn-salah',
+  path: '/learn-salah',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MoodRoute = MoodRouteImport.update({
+  id: '/mood',
+  path: '/mood',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MoreRoute = MoreRouteImport.update({
+  id: '/more',
+  path: '/more',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NaatsRoute = NaatsRouteImport.update({
+  id: '/naats',
+  path: '/naats',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NamesRoute = NamesRouteImport.update({
+  id: '/names',
+  path: '/names',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProphetsRoute = ProphetsRouteImport.update({
+  id: '/prophets',
+  path: '/prophets',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QaidaRoute = QaidaRouteImport.update({
+  id: '/qaida',
+  path: '/qaida',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QiblaRoute = QiblaRouteImport.update({
+  id: '/qibla',
+  path: '/qibla',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizRoute = QuizRouteImport.update({
+  id: '/quiz',
+  path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RamadanRoute = RamadanRouteImport.update({
+  id: '/ramadan',
+  path: '/ramadan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScannerRoute = ScannerRouteImport.update({
+  id: '/scanner',
+  path: '/scanner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeerahRoute = SeerahRouteImport.update({
+  id: '/seerah',
+  path: '/seerah',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasbeehRoute = TasbeehRouteImport.update({
+  id: '/tasbeeh',
+  path: '/tasbeeh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrackerRoute = TrackerRouteImport.update({
+  id: '/tracker',
+  path: '/tracker',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrailRoute = TrailRouteImport.update({
+  id: '/trail',
+  path: '/trail',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TreeRoute = TreeRouteImport.update({
+  id: '/tree',
+  path: '/tree',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WheelRoute = WheelRouteImport.update({
+  id: '/wheel',
+  path: '/wheel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZakatRoute = ZakatRouteImport.update({
+  id: '/zakat',
+  path: '/zakat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiTranslateRoute = ApiTranslateRouteImport.update({
+  id: '/api/translate',
+  path: '/api/translate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HadithIndexRoute = HadithIndexRouteImport.update({
+  id: '/hadith/',
+  path: '/hadith/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HadithBookIdRoute = HadithBookIdRouteImport.update({
+  id: '/hadith/$bookId',
+  path: '/hadith/$bookId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MushafLinesRoute = MushafLinesRouteImport.update({
+  id: '/mushaf/$lines',
+  path: '/mushaf/$lines',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuranIndexRoute = QuranIndexRouteImport.update({
+  id: '/quran/',
+  path: '/quran/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuranSurahIdRoute = QuranSurahIdRouteImport.update({
+  id: '/quran/$surahId',
+  path: '/quran/$surahId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuranPdfRoute = QuranPdfRouteImport.update({
+  id: '/quran/pdf',
+  path: '/quran/pdf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuranRomanRoute = QuranRomanRouteImport.update({
+  id: '/quran/roman',
+  path: '/quran/roman',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuranTeacherRoute = QuranTeacherRouteImport.update({
+  id: '/quran/teacher',
+  path: '/quran/teacher',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicMediaSplatRoute = ApiPublicMediaSplatRouteImport.update({
+  id: '/api/public/media/$',
+  path: '/api/public/media/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/auth': typeof AuthRoute
+  '/calendar': typeof CalendarRoute
+  '/deeds': typeof DeedsRoute
+  '/duas': typeof DuasRoute
+  '/family': typeof FamilyRoute
+  '/guess-prophet': typeof GuessProphetRoute
+  '/halal': typeof HalalRoute
+  '/ibadaat': typeof IbadaatRoute
+  '/jannah': typeof JannahRoute
+  '/lake': typeof LakeRoute
+  '/learn-salah': typeof LearnSalahRoute
+  '/mood': typeof MoodRoute
+  '/more': typeof MoreRoute
+  '/naats': typeof NaatsRoute
+  '/names': typeof NamesRoute
+  '/prophets': typeof ProphetsRoute
+  '/qaida': typeof QaidaRoute
+  '/qibla': typeof QiblaRoute
+  '/quiz': typeof QuizRoute
+  '/ramadan': typeof RamadanRoute
+  '/scanner': typeof ScannerRoute
+  '/search': typeof SearchRoute
+  '/seerah': typeof SeerahRoute
+  '/settings': typeof SettingsRoute
+  '/tasbeeh': typeof TasbeehRoute
+  '/tracker': typeof TrackerRoute
+  '/trail': typeof TrailRoute
+  '/tree': typeof TreeRoute
+  '/wheel': typeof WheelRoute
+  '/zakat': typeof ZakatRoute
+  '/api/translate': typeof ApiTranslateRoute
+  '/hadith/$bookId': typeof HadithBookIdRoute
+  '/mushaf/$lines': typeof MushafLinesRoute
+  '/quran/$surahId': typeof QuranSurahIdRoute
+  '/quran/pdf': typeof QuranPdfRoute
+  '/quran/roman': typeof QuranRomanRoute
+  '/quran/teacher': typeof QuranTeacherRoute
+  '/hadith/': typeof HadithIndexRoute
+  '/quran/': typeof QuranIndexRoute
+  '/api/public/media/$': typeof ApiPublicMediaSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/auth': typeof AuthRoute
+  '/calendar': typeof CalendarRoute
+  '/deeds': typeof DeedsRoute
+  '/duas': typeof DuasRoute
+  '/family': typeof FamilyRoute
+  '/guess-prophet': typeof GuessProphetRoute
+  '/halal': typeof HalalRoute
+  '/ibadaat': typeof IbadaatRoute
+  '/jannah': typeof JannahRoute
+  '/lake': typeof LakeRoute
+  '/learn-salah': typeof LearnSalahRoute
+  '/mood': typeof MoodRoute
+  '/more': typeof MoreRoute
+  '/naats': typeof NaatsRoute
+  '/names': typeof NamesRoute
+  '/prophets': typeof ProphetsRoute
+  '/qaida': typeof QaidaRoute
+  '/qibla': typeof QiblaRoute
+  '/quiz': typeof QuizRoute
+  '/ramadan': typeof RamadanRoute
+  '/scanner': typeof ScannerRoute
+  '/search': typeof SearchRoute
+  '/seerah': typeof SeerahRoute
+  '/settings': typeof SettingsRoute
+  '/tasbeeh': typeof TasbeehRoute
+  '/tracker': typeof TrackerRoute
+  '/trail': typeof TrailRoute
+  '/tree': typeof TreeRoute
+  '/wheel': typeof WheelRoute
+  '/zakat': typeof ZakatRoute
+  '/api/translate': typeof ApiTranslateRoute
+  '/hadith/$bookId': typeof HadithBookIdRoute
+  '/mushaf/$lines': typeof MushafLinesRoute
+  '/quran/$surahId': typeof QuranSurahIdRoute
+  '/quran/pdf': typeof QuranPdfRoute
+  '/quran/roman': typeof QuranRomanRoute
+  '/quran/teacher': typeof QuranTeacherRoute
+  '/hadith': typeof HadithIndexRoute
+  '/quran': typeof QuranIndexRoute
+  '/api/public/media/$': typeof ApiPublicMediaSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/auth': typeof AuthRoute
+  '/calendar': typeof CalendarRoute
+  '/deeds': typeof DeedsRoute
+  '/duas': typeof DuasRoute
+  '/family': typeof FamilyRoute
+  '/guess-prophet': typeof GuessProphetRoute
+  '/halal': typeof HalalRoute
+  '/ibadaat': typeof IbadaatRoute
+  '/jannah': typeof JannahRoute
+  '/lake': typeof LakeRoute
+  '/learn-salah': typeof LearnSalahRoute
+  '/mood': typeof MoodRoute
+  '/more': typeof MoreRoute
+  '/naats': typeof NaatsRoute
+  '/names': typeof NamesRoute
+  '/prophets': typeof ProphetsRoute
+  '/qaida': typeof QaidaRoute
+  '/qibla': typeof QiblaRoute
+  '/quiz': typeof QuizRoute
+  '/ramadan': typeof RamadanRoute
+  '/scanner': typeof ScannerRoute
+  '/search': typeof SearchRoute
+  '/seerah': typeof SeerahRoute
+  '/settings': typeof SettingsRoute
+  '/tasbeeh': typeof TasbeehRoute
+  '/tracker': typeof TrackerRoute
+  '/trail': typeof TrailRoute
+  '/tree': typeof TreeRoute
+  '/wheel': typeof WheelRoute
+  '/zakat': typeof ZakatRoute
+  '/api/translate': typeof ApiTranslateRoute
+  '/hadith/$bookId': typeof HadithBookIdRoute
+  '/mushaf/$lines': typeof MushafLinesRoute
+  '/quran/$surahId': typeof QuranSurahIdRoute
+  '/quran/pdf': typeof QuranPdfRoute
+  '/quran/roman': typeof QuranRomanRoute
+  '/quran/teacher': typeof QuranTeacherRoute
+  '/hadith/': typeof HadithIndexRoute
+  '/quran/': typeof QuranIndexRoute
+  '/api/public/media/$': typeof ApiPublicMediaSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/auth'
+    | '/calendar'
+    | '/deeds'
+    | '/duas'
+    | '/family'
+    | '/guess-prophet'
+    | '/halal'
+    | '/ibadaat'
+    | '/jannah'
+    | '/lake'
+    | '/learn-salah'
+    | '/mood'
+    | '/more'
+    | '/naats'
+    | '/names'
+    | '/prophets'
+    | '/qaida'
+    | '/qibla'
+    | '/quiz'
+    | '/ramadan'
+    | '/scanner'
+    | '/search'
+    | '/seerah'
+    | '/settings'
+    | '/tasbeeh'
+    | '/tracker'
+    | '/trail'
+    | '/tree'
+    | '/wheel'
+    | '/zakat'
+    | '/api/translate'
+    | '/hadith/$bookId'
+    | '/mushaf/$lines'
+    | '/quran/$surahId'
+    | '/quran/pdf'
+    | '/quran/roman'
+    | '/quran/teacher'
+    | '/hadith/'
+    | '/quran/'
+    | '/api/public/media/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/auth'
+    | '/calendar'
+    | '/deeds'
+    | '/duas'
+    | '/family'
+    | '/guess-prophet'
+    | '/halal'
+    | '/ibadaat'
+    | '/jannah'
+    | '/lake'
+    | '/learn-salah'
+    | '/mood'
+    | '/more'
+    | '/naats'
+    | '/names'
+    | '/prophets'
+    | '/qaida'
+    | '/qibla'
+    | '/quiz'
+    | '/ramadan'
+    | '/scanner'
+    | '/search'
+    | '/seerah'
+    | '/settings'
+    | '/tasbeeh'
+    | '/tracker'
+    | '/trail'
+    | '/tree'
+    | '/wheel'
+    | '/zakat'
+    | '/api/translate'
+    | '/hadith/$bookId'
+    | '/mushaf/$lines'
+    | '/quran/$surahId'
+    | '/quran/pdf'
+    | '/quran/roman'
+    | '/quran/teacher'
+    | '/hadith'
+    | '/quran'
+    | '/api/public/media/$'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/auth'
+    | '/calendar'
+    | '/deeds'
+    | '/duas'
+    | '/family'
+    | '/guess-prophet'
+    | '/halal'
+    | '/ibadaat'
+    | '/jannah'
+    | '/lake'
+    | '/learn-salah'
+    | '/mood'
+    | '/more'
+    | '/naats'
+    | '/names'
+    | '/prophets'
+    | '/qaida'
+    | '/qibla'
+    | '/quiz'
+    | '/ramadan'
+    | '/scanner'
+    | '/search'
+    | '/seerah'
+    | '/settings'
+    | '/tasbeeh'
+    | '/tracker'
+    | '/trail'
+    | '/tree'
+    | '/wheel'
+    | '/zakat'
+    | '/api/translate'
+    | '/hadith/$bookId'
+    | '/mushaf/$lines'
+    | '/quran/$surahId'
+    | '/quran/pdf'
+    | '/quran/roman'
+    | '/quran/teacher'
+    | '/hadith/'
+    | '/quran/'
+    | '/api/public/media/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
+  AuthRoute: typeof AuthRoute
+  CalendarRoute: typeof CalendarRoute
+  DeedsRoute: typeof DeedsRoute
+  DuasRoute: typeof DuasRoute
+  FamilyRoute: typeof FamilyRoute
+  GuessProphetRoute: typeof GuessProphetRoute
+  HalalRoute: typeof HalalRoute
+  IbadaatRoute: typeof IbadaatRoute
+  JannahRoute: typeof JannahRoute
+  LakeRoute: typeof LakeRoute
+  LearnSalahRoute: typeof LearnSalahRoute
+  MoodRoute: typeof MoodRoute
+  MoreRoute: typeof MoreRoute
+  NaatsRoute: typeof NaatsRoute
+  NamesRoute: typeof NamesRoute
+  ProphetsRoute: typeof ProphetsRoute
+  QaidaRoute: typeof QaidaRoute
+  QiblaRoute: typeof QiblaRoute
+  QuizRoute: typeof QuizRoute
+  RamadanRoute: typeof RamadanRoute
+  ScannerRoute: typeof ScannerRoute
+  SearchRoute: typeof SearchRoute
+  SeerahRoute: typeof SeerahRoute
+  SettingsRoute: typeof SettingsRoute
+  TasbeehRoute: typeof TasbeehRoute
+  TrackerRoute: typeof TrackerRoute
+  TrailRoute: typeof TrailRoute
+  TreeRoute: typeof TreeRoute
+  WheelRoute: typeof WheelRoute
+  ZakatRoute: typeof ZakatRoute
+  ApiTranslateRoute: typeof ApiTranslateRoute
+  HadithBookIdRoute: typeof HadithBookIdRoute
+  MushafLinesRoute: typeof MushafLinesRoute
+  QuranSurahIdRoute: typeof QuranSurahIdRoute
+  QuranPdfRoute: typeof QuranPdfRoute
+  QuranRomanRoute: typeof QuranRomanRoute
+  QuranTeacherRoute: typeof QuranTeacherRoute
+  HadithIndexRoute: typeof HadithIndexRoute
+  QuranIndexRoute: typeof QuranIndexRoute
+  ApiPublicMediaSplatRoute: typeof ApiPublicMediaSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +598,347 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calendar': {
+      id: '/calendar'
+      path: '/calendar'
+      fullPath: '/calendar'
+      preLoaderRoute: typeof CalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/deeds': {
+      id: '/deeds'
+      path: '/deeds'
+      fullPath: '/deeds'
+      preLoaderRoute: typeof DeedsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/duas': {
+      id: '/duas'
+      path: '/duas'
+      fullPath: '/duas'
+      preLoaderRoute: typeof DuasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/family': {
+      id: '/family'
+      path: '/family'
+      fullPath: '/family'
+      preLoaderRoute: typeof FamilyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guess-prophet': {
+      id: '/guess-prophet'
+      path: '/guess-prophet'
+      fullPath: '/guess-prophet'
+      preLoaderRoute: typeof GuessProphetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/halal': {
+      id: '/halal'
+      path: '/halal'
+      fullPath: '/halal'
+      preLoaderRoute: typeof HalalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ibadaat': {
+      id: '/ibadaat'
+      path: '/ibadaat'
+      fullPath: '/ibadaat'
+      preLoaderRoute: typeof IbadaatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jannah': {
+      id: '/jannah'
+      path: '/jannah'
+      fullPath: '/jannah'
+      preLoaderRoute: typeof JannahRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lake': {
+      id: '/lake'
+      path: '/lake'
+      fullPath: '/lake'
+      preLoaderRoute: typeof LakeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn-salah': {
+      id: '/learn-salah'
+      path: '/learn-salah'
+      fullPath: '/learn-salah'
+      preLoaderRoute: typeof LearnSalahRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mood': {
+      id: '/mood'
+      path: '/mood'
+      fullPath: '/mood'
+      preLoaderRoute: typeof MoodRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/more': {
+      id: '/more'
+      path: '/more'
+      fullPath: '/more'
+      preLoaderRoute: typeof MoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/naats': {
+      id: '/naats'
+      path: '/naats'
+      fullPath: '/naats'
+      preLoaderRoute: typeof NaatsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/names': {
+      id: '/names'
+      path: '/names'
+      fullPath: '/names'
+      preLoaderRoute: typeof NamesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prophets': {
+      id: '/prophets'
+      path: '/prophets'
+      fullPath: '/prophets'
+      preLoaderRoute: typeof ProphetsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/qaida': {
+      id: '/qaida'
+      path: '/qaida'
+      fullPath: '/qaida'
+      preLoaderRoute: typeof QaidaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/qibla': {
+      id: '/qibla'
+      path: '/qibla'
+      fullPath: '/qibla'
+      preLoaderRoute: typeof QiblaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz': {
+      id: '/quiz'
+      path: '/quiz'
+      fullPath: '/quiz'
+      preLoaderRoute: typeof QuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ramadan': {
+      id: '/ramadan'
+      path: '/ramadan'
+      fullPath: '/ramadan'
+      preLoaderRoute: typeof RamadanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scanner': {
+      id: '/scanner'
+      path: '/scanner'
+      fullPath: '/scanner'
+      preLoaderRoute: typeof ScannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seerah': {
+      id: '/seerah'
+      path: '/seerah'
+      fullPath: '/seerah'
+      preLoaderRoute: typeof SeerahRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasbeeh': {
+      id: '/tasbeeh'
+      path: '/tasbeeh'
+      fullPath: '/tasbeeh'
+      preLoaderRoute: typeof TasbeehRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tracker': {
+      id: '/tracker'
+      path: '/tracker'
+      fullPath: '/tracker'
+      preLoaderRoute: typeof TrackerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trail': {
+      id: '/trail'
+      path: '/trail'
+      fullPath: '/trail'
+      preLoaderRoute: typeof TrailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tree': {
+      id: '/tree'
+      path: '/tree'
+      fullPath: '/tree'
+      preLoaderRoute: typeof TreeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wheel': {
+      id: '/wheel'
+      path: '/wheel'
+      fullPath: '/wheel'
+      preLoaderRoute: typeof WheelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zakat': {
+      id: '/zakat'
+      path: '/zakat'
+      fullPath: '/zakat'
+      preLoaderRoute: typeof ZakatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/translate': {
+      id: '/api/translate'
+      path: '/api/translate'
+      fullPath: '/api/translate'
+      preLoaderRoute: typeof ApiTranslateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hadith/': {
+      id: '/hadith/'
+      path: '/hadith'
+      fullPath: '/hadith/'
+      preLoaderRoute: typeof HadithIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hadith/$bookId': {
+      id: '/hadith/$bookId'
+      path: '/hadith/$bookId'
+      fullPath: '/hadith/$bookId'
+      preLoaderRoute: typeof HadithBookIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mushaf/$lines': {
+      id: '/mushaf/$lines'
+      path: '/mushaf/$lines'
+      fullPath: '/mushaf/$lines'
+      preLoaderRoute: typeof MushafLinesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quran/': {
+      id: '/quran/'
+      path: '/quran'
+      fullPath: '/quran/'
+      preLoaderRoute: typeof QuranIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quran/$surahId': {
+      id: '/quran/$surahId'
+      path: '/quran/$surahId'
+      fullPath: '/quran/$surahId'
+      preLoaderRoute: typeof QuranSurahIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quran/pdf': {
+      id: '/quran/pdf'
+      path: '/quran/pdf'
+      fullPath: '/quran/pdf'
+      preLoaderRoute: typeof QuranPdfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quran/roman': {
+      id: '/quran/roman'
+      path: '/quran/roman'
+      fullPath: '/quran/roman'
+      preLoaderRoute: typeof QuranRomanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quran/teacher': {
+      id: '/quran/teacher'
+      path: '/quran/teacher'
+      fullPath: '/quran/teacher'
+      preLoaderRoute: typeof QuranTeacherRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/media/$': {
+      id: '/api/public/media/$'
+      path: '/api/public/media/$'
+      fullPath: '/api/public/media/$'
+      preLoaderRoute: typeof ApiPublicMediaSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
+  AuthRoute: AuthRoute,
+  CalendarRoute: CalendarRoute,
+  DeedsRoute: DeedsRoute,
+  DuasRoute: DuasRoute,
+  FamilyRoute: FamilyRoute,
+  GuessProphetRoute: GuessProphetRoute,
+  HalalRoute: HalalRoute,
+  IbadaatRoute: IbadaatRoute,
+  JannahRoute: JannahRoute,
+  LakeRoute: LakeRoute,
+  LearnSalahRoute: LearnSalahRoute,
+  MoodRoute: MoodRoute,
+  MoreRoute: MoreRoute,
+  NaatsRoute: NaatsRoute,
+  NamesRoute: NamesRoute,
+  ProphetsRoute: ProphetsRoute,
+  QaidaRoute: QaidaRoute,
+  QiblaRoute: QiblaRoute,
+  QuizRoute: QuizRoute,
+  RamadanRoute: RamadanRoute,
+  ScannerRoute: ScannerRoute,
+  SearchRoute: SearchRoute,
+  SeerahRoute: SeerahRoute,
+  SettingsRoute: SettingsRoute,
+  TasbeehRoute: TasbeehRoute,
+  TrackerRoute: TrackerRoute,
+  TrailRoute: TrailRoute,
+  TreeRoute: TreeRoute,
+  WheelRoute: WheelRoute,
+  ZakatRoute: ZakatRoute,
+  ApiTranslateRoute: ApiTranslateRoute,
+  HadithBookIdRoute: HadithBookIdRoute,
+  MushafLinesRoute: MushafLinesRoute,
+  QuranSurahIdRoute: QuranSurahIdRoute,
+  QuranPdfRoute: QuranPdfRoute,
+  QuranRomanRoute: QuranRomanRoute,
+  QuranTeacherRoute: QuranTeacherRoute,
+  HadithIndexRoute: HadithIndexRoute,
+  QuranIndexRoute: QuranIndexRoute,
+  ApiPublicMediaSplatRoute: ApiPublicMediaSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
