@@ -1,11 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { ExternalLink, Headphones, Mic2, Music4, Play, Quote, Search } from "lucide-react";
+import { ExternalLink, Headphones, Mic2, Play, Quote, Search } from "lucide-react";
 import { Card, SectionTitle } from "@/components/AppShell";
 import { NasheedPlayer } from "@/components/NasheedPlayer";
 import { spotifyEmbed, useSiteConfig } from "@/lib/site-config";
 import { NASHEED_TRACKS, TRACK_THEMES, type NasheedTrack } from "@/lib/nasheed-tracks";
-import { NASHEEDS } from "@/lib/nasheed-data";
 
 export const Route = createFileRoute("/naats")({
   head: () => ({
@@ -53,16 +52,6 @@ function Naats() {
       );
     });
   }, [lang, theme, query]);
-
-  /** The 100-entry reference library (kalam, refrains and translations). */
-  const reference = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    return NASHEEDS.filter((n) => {
-      if (lang !== "All" && n.language !== lang) return false;
-      if (!q) return true;
-      return n.title.toLowerCase().includes(q) || n.artist.toLowerCase().includes(q);
-    }).slice(0, 60);
-  }, [lang, query]);
 
   const spotifyCards = site.spotify
     .map((entry) => ({ entry, embed: spotifyEmbed(entry) }))
@@ -193,37 +182,6 @@ function Naats() {
             })}
           </ul>
         )}
-      </section>
-
-      {/* ---------------- Kalam reference ---------------- */}
-      <section aria-labelledby="kalam-heading" className="space-y-3">
-        <div className="flex items-center gap-2">
-          <Music4 className="size-5 text-primary" aria-hidden />
-          <h2 id="kalam-heading" className="font-display text-xl">
-            Kalam & refrains
-          </h2>
-        </div>
-        <ul className="nasheed-grid list-none p-0">
-          {reference.map((n) => (
-            <li key={n.id}>
-              <Card className="nasheed-card gap-2">
-                <h3 className="font-display text-base leading-snug">{n.title}</h3>
-                <p className="text-[11px] text-muted-foreground">
-                  {n.artist} · {n.language} · {n.theme}
-                </p>
-                {n.refrain && (
-                  <p dir="rtl" className="urdu-text text-base leading-loose text-primary">
-                    {n.refrain}
-                  </p>
-                )}
-                {n.translation && (
-                  <p className="text-xs italic text-muted-foreground">{n.translation}</p>
-                )}
-                <p className="mt-auto text-xs text-muted-foreground">{n.about}</p>
-              </Card>
-            </li>
-          ))}
-        </ul>
       </section>
 
       {/* ---------------- Spotify: full players, vocals only ---------------- */}
